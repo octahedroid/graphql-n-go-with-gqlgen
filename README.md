@@ -20,7 +20,7 @@ This is the roadmap to learn GraphQL implemented on Go (golang) with gqlgen.
 Instructions. This repo is organized in steps to demonstrate, one by one, the progress in learning of gqlgen. Each of these steps is related to one tag or release of this repo, so you can jump to the tag of your interest or go one by one.
 ## Step 1. Setup gqlgen
 
-First you can sarting here https://gqlgen.com/getting-started/ this code is demostrated on this step.
+First you can starting here https://gqlgen.com/getting-started/ the code what is demonstrated on this step.
 
 ```bash
 $ mkdir learn-gqlgen
@@ -32,3 +32,18 @@ Exec "go run ./server.go" to start GraphQL server
 $ go run server.go 
 2021/03/02 16:29:48 connect to http://localhost:8080/ for GraphQL playground
 ```
+
+
+## Step 2. Add code slightly more realistic
+
+Add new `graph/model/todo.go`, regenerate the code and implement the new resolver into `graph/schema.resolvers.go`.
+
+```bash
+$ go generate
+$ go run server.go 
+2021/03/02 20:35:39 connect to http://localhost:8080/ for GraphQL playground
+```
+
+Tip. Add this comment to `resolver.go` for reduce time, and avoid the `go generate` command.
+`//go:generate go run github.com/99designs/gqlgen`
+
